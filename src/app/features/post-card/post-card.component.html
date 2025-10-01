@@ -1,0 +1,13 @@
+<article class="p-4 bg-white rounded-lg shadow border border-gray-200">
+  <a
+    [href]="post().url"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-lg font-bold hover:text-blue-600 block"
+  >
+    {{ post().title }}
+  </a>
+  <div class="text-sm text-gray-600 mt-1">
+    {{ post().score }} points • by {{ post().by }} • {{ post().descendants || 0 }} comments
+  </div>
+</article>

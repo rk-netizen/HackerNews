@@ -1,4 +1,4 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { BehaviorSubject, catchError, forkJoin, map, of, tap } from 'rxjs';
 import { HackerNewsItem } from './models/hacker-news-item';
 import { HttpClient } from '@angular/common/http';
@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class HackerNewsService {
+  private readonly http = inject(HttpClient);
   private readonly API = 'https://hacker-news.firebaseio.com/v0';
 
   private readonly storyIds$ = new BehaviorSubject<number[]>([]);
@@ -21,7 +22,7 @@ export class HackerNewsService {
 
   hasMore = computed(() => this.items().length < this.storyIds().length);
 
-  constructor(private readonly http: HttpClient) {
+  constructor() {
     this.storyIds$.subscribe((ids) => this.storyIds.set(ids));
     this.items$.subscribe((posts) => this.items.set(posts));
     this.loading$.subscribe((isLoading) => this.loading.set(isLoading));
