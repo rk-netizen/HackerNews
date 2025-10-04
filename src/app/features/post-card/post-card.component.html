@@ -1,13 +1,19 @@
-<article class="p-4 bg-white rounded-lg shadow border border-gray-200">
-  <a
-    [href]="post().url"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="text-lg font-bold hover:text-blue-600 block"
-  >
-    {{ post().title }}
-  </a>
-  <div class="text-sm text-gray-600 mt-1">
-    {{ post().score }} points • by {{ post().by }} • {{ post().descendants || 0 }} comments
+<article class="p-4 bg-white rounded-lg shadow border border-gray-200 mb-1">
+  <div class="flex items-start justify-between">
+    <a
+      [href]="post().url"
+      target="_blank"
+      rel="noopener"
+      class="text-lg font-bold hover:text-blue-600 flex-1"
+    >
+      {{ post().title }}
+    </a>
+    @if (post().url) {
+    <span class="text-sm text-gray-500 ml-2">{{ post().url | domain }}</span>
+    }
+  </div>
+  <div class="text-sm text-gray-600 mt-2">
+    {{ post().score }} points • by {{ post().by }} • {{ post().time | timeAgo }} •
+    {{ post().descendants || 0 }} comments
   </div>
 </article>
