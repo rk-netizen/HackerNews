@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { forkJoin, map, Observable, of, catchError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { StoryType, Story } from '../models/hacker-news-item';
+import { StoryType, Story } from '../models/hacker-news-item.interface';
 
 @Injectable({
   providedIn: 'root',

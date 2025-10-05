@@ -1,10 +1,12 @@
-export interface HackerNewsItem {
+export interface Story {
   id: number;
   title: string;
   by: string;
-  score: string;
+  score: number;
   url?: string;
   time: number;
   descendants?: number;
-  type?: number;
+  type?: string;
 }
+
+export type StoryType = 'top' | 'new';

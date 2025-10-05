@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Story } from '../../core/models/hacker-news-item';
+import { Story } from '../../core/models/hacker-news-item.interface';
 import { TimeAgoPipe, DomainPipe } from '../../shared';
 
 @Component({

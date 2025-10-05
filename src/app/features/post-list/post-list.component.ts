@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { HackerNewsStateService } from '../../core/services/hacker-news-state.service';
-import { StoryType } from '../../core/models/hacker-news-item';
+import { StoryType } from '../../core/models/hacker-news-item.interface';
 import { PostCardComponent } from '../post-card/post-card.component';
 
 import {

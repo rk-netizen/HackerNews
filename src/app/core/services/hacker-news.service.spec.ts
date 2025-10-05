@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { HackerNewsService } from './hacker-news.service';
-import { Story, StoryType } from '../models/hacker-news-item';
+import { Story, StoryType } from '../models/hacker-news-item.interface';
 import { provideHttpClient } from '@angular/common/http';
 
 describe('HackerNewsService', () => {
